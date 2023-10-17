@@ -1,6 +1,7 @@
-import 'package:code_wizard/pages/login_screen.dart';
+import 'package:code_wizard/pages/c_programming/c_syntax.dart';
 import 'package:flutter/material.dart';
-import 'intro.dart';
+import 'package:code_wizard/pages/c_programming//c_output.dart';
+import 'package:code_wizard/pages/c_programming/intro.dart';
 import 'cplaylist.dart';
 
 class C_Prog extends StatelessWidget {
@@ -11,18 +12,18 @@ class C_Prog extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("C Programming"),
-        centerTitle: true,
-        actions:<Widget> [
-          IconButton(
-            icon: const Icon(Icons.play_circle),
-              onPressed: (){
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=> youtube() ));
+          centerTitle: true,
+          actions:<Widget> [
+      IconButton(
+      icon: const Icon(Icons.play_circle),
+        onPressed: (){
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context)=> youtube() ));
 
-             // Navigator.pop(context);
-              }
-          )
-        ],
+          // Navigator.pop(context);
+        }
+        )
+      ],
       ),
         body: Stack(
           children: [
@@ -55,7 +56,10 @@ class C_Prog extends StatelessWidget {
                           border: Border.all(width: 2),
                           borderRadius: BorderRadius.circular(10)
                       ),
-                      child: TextButton(onPressed: (){},
+                      child: TextButton(onPressed: (){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => C_Syntax()));
+                      },
                           child: Text("Syntax", style: TextStyle(
                               fontSize: 25,
                               color: Colors.black
@@ -67,9 +71,12 @@ class C_Prog extends StatelessWidget {
                       width: double.infinity,
                       decoration: BoxDecoration(
                           border: Border.all(width: 2),
-                          borderRadius: BorderRadius.circular(10)
+                          borderRadius: BorderRadius.circular(10),
                       ),
-                      child: TextButton(onPressed: (){},
+                      child: TextButton(onPressed: (){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => C_Output()));
+                      },
                           child: Text("Output", style: TextStyle(
                               fontSize: 25,
                               color: Colors.black

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'c_pro.dart';
+import 'c_programming/c_pro.dart';
+import 'package:code_wizard/pages/c++_programming/c++_pro.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,58 +8,52 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Programming App'),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: const <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blueGrey,
-              ),
-              child: Text(
-                'Code Wizaed',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: const <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blueGrey,
+                ),
+                child: Text(
+                  'CODE WIZARD',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    letterSpacing: 2
 
+                  ),
                 ),
               ),
-            ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Profile'),
-            ),
-            ListTile(
-              leading: Icon(Icons.mail),
-              title: Text('About Us'),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-            ),
-            ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Log Out'),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text('Profile'),
+              ),
+              ListTile(
+                leading: Icon(Icons.mail),
+                title: Text('About Us'),
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+              ),
+              ListTile(
+                leading: Icon(Icons.logout),
+                title: Text('Log Out'),
 
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
+      appBar: AppBar(
+        title: Text("CODE WIZARD"),
+        centerTitle: true,
       ),
       backgroundColor: Colors.blueGrey,
       body: Stack(
         children: [
-          // Container(
-          //   height: 100,
-          //   width: double.infinity,
-          //   color: Colors.blue,
-          //   child: Center(child: Text("Programming App", style: TextStyle(
-          //     fontSize: 25,
-          //     fontWeight: FontWeight.bold,
-          //   ),)),
-          // ),
+
           Container(
             margin: EdgeInsets.only(top: 10,left: 10, right: 10),
             child: SingleChildScrollView(
@@ -75,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child:TextButton(
                       onPressed: () => Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) => C_Prog())),
+                          .push(MaterialPageRoute(builder: (context) => const C_Prog())),
                       child: const Text('C Programming'),
                       style: TextButton.styleFrom(
                           primary: Colors.black,
@@ -93,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child:TextButton(
                       onPressed: () => Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) => const HomeScreen())),
+                          .push(MaterialPageRoute(builder: (context) => const Cplus_prog())),
                       child: const Text('C++ Programming'),
                       style: TextButton.styleFrom(
                           primary: Colors.black,

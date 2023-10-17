@@ -1,22 +1,64 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class C_Intro extends StatefulWidget {
-  const C_Intro({super.key});
+class Cplus_Intro extends StatefulWidget {
+  const Cplus_Intro({super.key});
   @override
-  State<C_Intro> createState() => _C_IntroState();
+  State<Cplus_Intro> createState() => _Cplus_IntroState();
 }
 
-class _C_IntroState extends State<C_Intro> {
-  final CollectionReference _cprogramming =
-      FirebaseFirestore.instance.collection('cprogramming');
+class _Cplus_IntroState extends State<Cplus_Intro> {
+  final CollectionReference _cplusprogramming =
+      FirebaseFirestore.instance.collection('C++ programming');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("C Tutorial"),
+        title: Text("Intro"),
       ),
-      body: StreamBuilder(
+      body: Stack(
+        children: [
+          Container(
+            height: 500,
+            child: Container(
+              child: SfPdfViewer.network('https://firebasestorage.googleapis.com/v0/b/code-wizard-932a2.'
+                  'appspot.com/o/files%2Fc%2B%2B%2Fc%2B%2B%20intro%20.pdf?alt=media&token=f39c623f-a83e-43d9-'
+                  '9052-1ef0c5612e1d&_gl=1*xz73ds*_ga*MTM2NzU5MDY0Ny4xNjk3Mjc1Mjk1*_ga_CW55HF8NVT*MTY5NzU3MTI0My43L'
+                  'jEuMTY5NzU3MTI4Ny4xNi4wLjA.'),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 700),
+            height: 300,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white70,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(onPressed: (){
+                },
+                    child: Text("Docs")),
+                ElevatedButton(onPressed: (){},
+                    child: Text("Video")),
+                ElevatedButton(onPressed: (){},
+                    child: Text("Code")),
+
+              ],
+            ),
+          ),
+        ],
+      )
+    );
+  }
+}
+
+
+//Database Fetch
+/*
+StreamBuilder(
           stream: _cprogramming.snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
             if (streamSnapshot.hasData) {
@@ -55,6 +97,4 @@ class _C_IntroState extends State<C_Intro> {
               child: CircularProgressIndicator(),
             );
           }),
-    );
-  }
-}
+ */

@@ -34,15 +34,15 @@ class _youtubeState extends State<youtube> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(
-        title: const Text('Video Tutorial',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
+        appBar: AppBar(
+          title: const Text('Video Tutorial',
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
 
+            ),
           ),
         ),
-      ),
 
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +57,7 @@ class _youtubeState extends State<youtube> {
               showVideoProgressIndicator: true,
             ),
 
-           const SizedBox(height: 30,),
+            const SizedBox(height: 30,),
             const Text('C Programming Syntex' ,style: TextStyle(
               fontSize: 25,
               color: Colors.black,
@@ -72,7 +72,3 @@ class _youtubeState extends State<youtube> {
     );
   }
 }
-
-
-
-

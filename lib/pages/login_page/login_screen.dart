@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'register_screen.dart';
-import 'home_screen.dart';
+import 'package:code_wizard/pages/login_page/forgot_pass.dart';
+import '../registration_page/register_screen.dart';
+import '../home_screen.dart';
 class loginScreen extends StatefulWidget {
   @override
   State<loginScreen> createState() => _loginScreenState();
@@ -27,7 +28,7 @@ class _loginScreenState extends State<loginScreen> {
         backgroundColor: Colors.transparent,
         body: Stack(
           children: [
-            Padding(
+           const Padding(
               padding: const EdgeInsets.only(top: 175, left: 33),
               child: Text('Welcome \nBack', style: TextStyle(
                 fontSize: 33,
@@ -121,7 +122,9 @@ class _loginScreenState extends State<loginScreen> {
                               letterSpacing: 3,
                             ),)),
                       ),
-                      TextButton(onPressed: (){}, child: Text('Forgotten password?')),
+                      TextButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgotPass()));
+                      }, child: Text('Forgotten password?')),
                       SizedBox(
                         height: 70,
                       ),
@@ -137,7 +140,9 @@ class _loginScreenState extends State<loginScreen> {
                             child: Text('Create new account', style: TextStyle(
                               color: Colors.white,
                               letterSpacing: 3,
-                            ),)),
+                            ),
+                            ),
+                        ),
                       ),
                     ],
                 ),

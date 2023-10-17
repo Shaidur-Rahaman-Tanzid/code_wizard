@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import '../home_screen.dart';
 class register extends StatefulWidget {
   @override
   State<register> createState() => _registerState();
